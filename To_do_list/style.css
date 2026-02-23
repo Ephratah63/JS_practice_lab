@@ -1,0 +1,57 @@
+body{
+font-family: Sans Serif, Arial Black;
+color: black;
+background-color: white;
+margin: 50px;
+}
+
+h1, h2{
+text-align: center;
+}
+
+main{
+border: 10px double black;
+margin: 80px;
+padding-top: 0px;
+padding-left: 50px;
+padding-right: 50px;
+padding-bottom: 50px;
+}
+
+legend{
+line-height: 60px;
+}
+
+button, .text{
+border: 2px solid black;
+border-radius: 5px;
+background-color: white;
+}
+
+button: hover{
+color: red;
+}
+
+main ul{
+text-align: left;
+list-style: none;
+padding: 0px;
+}
+
+img{
+width: 30px;
+background-color: white;
+}
+
+footer li{
+display: flex;
+}
+
+footer ul{
+font-weight: solid;
+text-align: center;
+text-decoration: none;
+list-style: none;
+color: black;
+background-color: white;
+}
