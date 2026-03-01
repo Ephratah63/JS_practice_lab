@@ -14,100 +14,25 @@
 
   <body>
 	
-     <h1>Rock pair Scissors</h2>
+     <h1>Rock paper Scissors</h2>
      
      <button onclick="
-	const randNum = Math.random();
-	let compMove = '';
-
-	if(randNum>=0 && randNum<1/3 ){
-	  compMove = 'rock';
-	}
-	else if(randNum>=1/3 && randNum<2/3){
-	  compMove = 'paper';
-	}
-	else if(randNum>=2/3 && randNum<1){
-	  compMove = 'scissors';
-	}
-	/*console.log(compMove);*/
-
-	let result = '';
-	if(compMove === 'rock'){
-	  result = 'Tie.';
-	}
-	if(compMove === 'paper'){
-	  result = 'You Lose!';
-	}
-	if(compMove === 'scissors'){
-	  result = 'You Win!';
-	}
-
-	alert(`You picked rock. Computer picked ${compMove}. \n 	${result}`);
-     ">Rock</button>
+				opt1();
+			">Rock</button>
 
      <button onclick="
-	const randNum = Math.random();
-	let compMove = '';
-
-	if(randNum>=0 && randNum<1/3 ){
-	  compMove = 'rock';
-	}
-	else if(randNum>=1/3 && randNum<2/3){
-	  compMove = 'paper';
-	}
-	else if(randNum>=2/3 && randNum<1){
-	  compMove = 'scissors';
-	}
-	/*console.log(compMove);*/
-
-	let result = '';
-	if(compMove === 'paper'){
-	  result = 'Tie';
-	}
-	if(compMove === 'rock'){
-	  result = 'You Win!';
-	}
-	if(compMove === 'scissors'){
-	  result = 'You Lose!';
-	}
-
-	alert(`You picked paper. Computer picked ${compMove}. \n 	${result}`);
-     ">Paper</button>
+				opt2();
+			">Paper</button>
 
      <button onclick="
-	const randNum = Math.random();
-	let compMove = '';
+				opt3();
+			">Scissors</button>
 
-	if(randNum>=0 && randNum<1/3 ){
-	  compMove = 'rock';
-	}
-	else if(randNum>=1/3 && randNum<2/3){
-	  compMove = 'paper';
-	}
-	else if(randNum>=2/3 && randNum<1){
-	  compMove = 'scissors';
-	}
-	/*console.log(compMove);*/
+		 <button onclick="
+		 	reset();
+		 ">Reset score</button>
 
-	let result = '';
-	if(compMove === 'scissors'){
-	  result = 'Tie';
-	}
-	if(compMove === 'paper'){
-	  result = 'You Win!';
-	}
-	if(compMove === 'rock'){
-	  result = 'You Lose!';
-	}
-	
-	alert(`You picked scissors. Computer picked ${compMove}. \n 	${result}`);
-     ">Scissors</button>
-
-     <script>
-	/*ternary operator*/
-	const result = 1 ? 'truthy' : 'falsy';
-	console.log(result);
-    </script>
+     <script src="My_script.js"></script>
 
   </body>
 </html>

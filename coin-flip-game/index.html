@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+
+  <head>
+    <meta charset="UTF-8" lang="en">
+    <title>Coin flip game</title>
+
+    <style>
+    </style>
+
+  </head>
+
+  <body>
+
+     <h1>Guess the flipped coins side</h1>
+
+     <button onclick="
+	let num = Math.random();
+	let flip = '';
+	if(num<0.5){
+	  flip = 'Heads';
+	}else{
+	  flip = 'Tails';
+	}
+
+	if(flip==='Heads'){
+	  alert('You Win\!');
+	}
+	else{
+	  alert('You Lose\!');
+	}
+    ">Heads</button>
+
+     <button onclick="
+	let num = Math.random();
+	let flip = '';
+	if(num<0.5){
+	  flip = 'Heads';
+	}else{
+	  flip = 'Tails';
+	}
+
+	if(flip==='Tails'){
+	  alert('You Win\!');
+	}
+	else{
+	  alert('You Lose\!');
+	}
+    ">Tails</button>
+
+     <script>
+	
+    </script>
+
+  </body>
+</html>
