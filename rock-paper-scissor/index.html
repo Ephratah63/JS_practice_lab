@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html>
-
-
   <head>
     <meta charset="UTF-8" lang="en">
     <title>Rock pair scissors</title>
-
     <style>
+      body{
+        font-family: Arial;
+        color: white;
+        background-color: black;
+      }
+      h1{
+        font-size: 50px;
+        font-weight: bold;
+      }
     </style>
-
   </head>
-
-
   <body>
-	
-     <h1>Rock paper Scissors</h2>
-     
-     <button onclick="
+    <h1>Rock paper Scissors</h2>
+
+    <button onclick="
 				opt1();
 			">Rock</button>
 
@@ -27,6 +29,15 @@
      <button onclick="
 				opt3();
 			">Scissors</button>
+
+      <p class = "user_move">You: Paper</p>
+      <p class = "comp_move">Computer: Paper</p>
+      <hr>
+      <p class="win_lose">You Win!</p>
+      <hr>
+      <p class = "score_1">Wins: 0</p>
+      <p class="score_2">Losses: 0</p>
+      <p class="score_3">Ties: 0</p>
 
 		 <button onclick="
 		 	reset();
