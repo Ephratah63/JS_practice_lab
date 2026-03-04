@@ -2,44 +2,83 @@
 <html>
   <head>
     <meta charset="UTF-8" lang="en">
-    <title>Rock pair scissors</title>
+    <title>Rock Paper Scissors</title>
     <style>
       body{
         font-family: Arial;
-        color: white;
-        background-color: black;
+        color: purple;
+        background-color: rgb(220, 220, 220);
       }
       h1{
         font-size: 50px;
         font-weight: bold;
       }
+      .icons{
+        align-items: justify;
+        border: 7px double rgba(128, 0, 128, 0.516);
+        padding: 0px;
+        margin: -4px;
+        width:  80px;
+        height: 60px;
+      }
+      #result{
+        font-size: 30px;
+        font-weight: bold;
+      }
+      .score{
+        /*flex: center;*/
+        background-color: rgb(220, 220, 220);
+        border: 5px solid rgba(128, 0, 128, 0.5);
+        padding-top: 13px;
+        padding-right: 13px;
+        padding-bottom: 13px;
+        padding-left: 13px;
+        width: 70px;
+        height: 30px;
+        .score1{
+          color: green;
+        }
+        .score2{
+          color: red;
+        }
+        .score3{
+          color: yellow;
+        }
+      }
+      .resetBtn{
+        font-weight: bold;
+        color: black;
+        background-color: white;
+        border-radius: 50px;
+        padding: 6px;
+        margin-bottom: 35px;
+        cursor: pointer;
+      }
     </style>
   </head>
   <body>
-    <h1>Rock paper Scissors</h2>
+    <h1>Rock Paper Scissors</h2>
 
     <button onclick="
 				opt1();
-			">Rock</button>
+			"><img class="icons" src="images/rock.png"></button>
 
      <button onclick="
 				opt2();
-			">Paper</button>
+			"><img class="icons" src="images/paper.png"></button>
 
      <button onclick="
 				opt3();
-			">Scissors</button>
+			"><img class="icons" src="images/scissors.png"></button>
 
-      <p class = "user_move">You: Paper</p>
-      <p class = "comp_move">Computer: Paper</p>
-      <hr>
-      <p class="win_lose">You Win!</p>
-      <hr>
-      <p class = "score_1">Wins: 0</p>
-      <p class="score_2">Losses: 0</p>
-      <p class="score_3">Ties: 0</p>
+      <p class = "user_move"></p>
+      <p class = "comp_move"></p>
+      <p class="win_lose" id="result"></p>
+      <p class = "score_1 score score1">Wins: 0</p>
+      <p class="score_2 score score2">Losses: 0</p>
+      <p class="score_3 score score3">Ties: 0</p>
 
-		 <button onclick="
+		 <button class="resetBtn" onclick="
 		 	reset();
 		 ">Reset score</button>
 
@@ -47,3 +86,4 @@
 
   </body>
 </html>
+

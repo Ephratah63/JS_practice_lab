@@ -136,13 +136,14 @@ function winLose(result) {
 }
 
 function userMove(playerMove) {
-  document.querySelector(".user_move").innerHTML = "You: " + playerMove;
+  document.querySelector(".user_move").innerHTML =
+    `You: <img class="icons" src="images/${playerMove}.png">`;
 }
 
 function computerMove(compMove) {
   let move = document.querySelector(".comp_move");
   if (compMove === "scissors") {
-    move.innerHTML = "Computer: Scissors";
+    move.innerHTML = `Computer: <img class="icons" src="images/${compMove}.png">`;
   }
   if (compMove === "paper") {
     move.innerHTML = "Computer: Paper";
