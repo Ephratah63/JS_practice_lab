@@ -29,6 +29,7 @@ Other new topics include the usages of: the document.querySelector(), innerHTML,
         font-size: 15px;
         padding: 8px;
       }
+
       .calculate-btn{
         font-size: 15px;
         color: white;
@@ -37,23 +38,89 @@ Other new topics include the usages of: the document.querySelector(), innerHTML,
         border: none;
         cursor: pointer;
       }
+
+      .error{
+        color: red;
+      }
+
+      .add_to_cart{
+        font-size: 15px;
+        background-color: rgba(255, 216, 20, 0.799);
+        border: none;
+        border-radius: 15px;
+        padding: 7px 30px;
+      }
+
+      .now{
+        color: white;
+        background-color: black;
+        border: none;
+        border-radius: 5px;
+        padding: 8px 10px;
+        margin: 10px;
+      }
+
+      .later{
+        font-weight: bold;
+        background-color: rgb(230, 230, 230);
+        border: none;
+        border-radius: 5px;
+        padding: 8px 10px;
+        margin: 10px;
+      }
+
+      .toggle1, .toggle2, .toggle3{
+        background-color: rgb(230,230,230);
+        padding: 10px 15px;
+        margin: 7px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .is_toggled{
+        color:white;
+        background-color: black;
+      }
     </style>
   </head>
  
   <body>
     <section>
-    <h4>Would you like to subscribe to our Weekly product update emails?</h4>
-    <button class="subscribe-btn" onclick="subscribed()">Subscribe</button>
+      <h4>Would you like to subscribe to our Weekly product update emails?</h4>
+      <button class="subscribe-btn" onclick="subscribed()">Subscribe</button>
     </section>
-<section>
-    <h2>Amazon Shipping Calculator</h2>
-    <p>Orders under $40 = +$10 for shipping</p>
-    <p>Orders over $40 = Free Shipping</p>
-    <input type="text" id="order_cost" placeholder="cost of order" onkeydown="
-      handleEnterKey();
-    ">
-    <button class="calculate-btn" onclick="calculateTotalCost();">Calculate</button>
-    <p id="total_cost"></p>
+    <hr>
+    <section>
+      <h2>Amazon Shipping Calculator</h2>
+      <p>Orders under $40 = +$10 for shipping</p>
+      <p>Orders over $40 = Free Shipping</p>
+      <input type="text" id="order_cost" placeholder="cost of order" onkeydown="
+        handleEnterKey();
+      ">
+      <button class="calculate-btn" onclick="calculateTotalCost();">Calculate</button>
+      <p id="total_cost"></p>
+    </section>
+    <hr>
+    <section>
+      <h2>Amazon Button</h2>
+      <button class="add_to_cart">Add to Cart</button>
+    </section>
+    <hr>
+    <section>
+      <h2>Uber Buttons</h2>
+      <button class="now">Request now</button>
+      <button class="later">Schedule for later</button>
+    </section>
+    <hr>
+    <section>
+      <button id="checking" class="js-button">Test</button>
+    </section>
+    <hr>
+    <section>
+      <button class="toggle1" onclick="on1();">Gaming</button>
+      <button class="toggle2" onclick="on2();">Music</button>
+      <button class="toggle3" onclick="on3();">Tech</button>
     </section>
   </body>
 
@@ -75,8 +142,13 @@ Other new topics include the usages of: the document.querySelector(), innerHTML,
       function calculateTotalCost(){
         const input = document.querySelector('#order_cost');
         const cost = Number(input.value);
+        if(cost < 0){
+          document.querySelector('#total_cost').innerHTML = 'Error: Cost cannot be less than $0';
+          document.querySelector('#total_cost').classList.add('error');
+        }else{
         const total = (cost < 40) ? (cost+10) : (cost);
         document.querySelector('#total_cost').innerHTML = 'Total Cost: $' + total;
+        }
       }
 
       function handleEnterKey(){
@@ -84,6 +156,47 @@ Other new topics include the usages of: the document.querySelector(), innerHTML,
         event.key === 'Enter' ? calculateTotalCost() : 0;
       }
 
+      /*
+      console.log(document.querySelector('#checking').classList.contains('js-button') ? true : false);
+      */
+
+      let btns1 = document.querySelector('.toggle1');
+      let btns2 = document.querySelector('.toggle2');
+      let btns3 = document.querySelector('.toggle3');
+
+      function on1(){
+        if( btns1.classList.contains('is_toggled')){
+          btns1.classList.remove('is_toggled');
+        }
+        else{
+          btns1.classList.add('is_toggled');
+          btns2.classList.remove('is_toggled');
+          btns3.classList.remove('is_toggled');
+        }
+      }
+
+      function on2(){
+        if( btns2.classList.contains('is_toggled')){
+          btns2.classList.remove('is_toggled');
+        }
+        else{
+          btns2.classList.add('is_toggled');
+          btns1.classList.remove('is_toggled');
+          btns3.classList.remove('is_toggled');
+        }
+      }
+
+      function on3(){
+        if( btns3.classList.contains('is_toggled')){
+          btns3.classList.remove('is_toggled');
+        }
+        else{
+          btns3.classList.add('is_toggled');
+          btns1.classList.remove('is_toggled');
+          btns2.classList.remove('is_toggled');
+
+        }
+      }
     </script>
   </body>
 </html>

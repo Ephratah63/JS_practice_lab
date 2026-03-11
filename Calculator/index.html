@@ -5,133 +5,144 @@
     <meta charset="UTF-8" lang="en">
     <title>Calculator</title>
     <style>
-	body{
-		font-family: Pacifico;
-		text-align: center;
-		color: black;
-		background-color: orange;
-		margin: 50px;
-	}
+			body{
+				font-family: Pacifico;
+				text-align: center;
+				color: black;
+				background-color: black;
+				margin: 50px;
+			}
 
-	h1{
-		font-size: 60px;
-		line-height: 100px;
-	}
+			h1{
+				font-size: 70px;
+				line-height: 100px;
+				background-color: orange;
+				border: 10px double black;
+				padding: 6px;
+				margin: 0px;
+			}
 
-	button{
-		border: none;
-		width: 70px;
-		height: 60px;
-		border-radius: 5px;
-		background-color: orange;
-		color: black;
-		font-weight: bold;
-	}
+			div{
+				border: 10px double orange;
+			}
 
-	div{
-	background-color: yellow;
-	border: 10px double black;
-	padding: 2px;
-	}
+			button{
+				font-size: 20px;
+				color: white;
+				background-color: rgb(63, 63, 63);
+				width: 70px;
+				height: 60px;
+				border: none;
+				border-radius: 30px;
+			}
+
+			.operators{
+				background: orange;
+			}
+
+			.buttons{
+				align-items: right;
+			}
 
     </style>
   </head>
 
   <body>
-<div>
-<h1>Calculator</h1>
-<p class="buttons">
-<button onclick="
-	calculation+='1';
-	console.log(calculation);
-">1</button>
-<button onclick="
-	calculation+='2';
-	console.log(calculation);
-">2</button>
-<button onclick="
-	calculation+='3';
-	console.log(calculation);
-">3</button>
-<button onclick="
-	calculation+=' + ';
-	console.log(calculation);
-">+</button>
-</p>
+			<h1>Calculator</h1>
 
-<p class="buttons">
-<button onclick="
-	calculation+='4';
-	console.log(calculation);
-">4</button>
-<button onclick="
-	calculation+='5';
-	console.log(calculation);
-">5</button>
-<button onclick="
-	calculation+='6';
-">6</button>
-<button onclick="
-	calculation+=' - ';
-	console.log(calculation);
-">-</button>
-</p>
+			<div>
+			<p class="buttons">
+				<button onclick="
+					calculation+='1';
+					console.log(calculation);
+				">1</button>
+				<button onclick="
+					calculation+='2';
+					console.log(calculation);
+				">2</button>
+				<button onclick="
+					calculation+='3';
+					console.log(calculation);
+				">3</button>
+				<button class="operators" onclick="
+					calculation+=' + ';
+					console.log(calculation);
+				">+</button>
+			</p>
 
-<p class="buttons">
-<button onclick="
-	calculation+=7;
-	console.log(calculation);
-">7</button>
-<button onclick="
-	calculation+=8;
-	console.log(calculation);
-">8</button>
-<button onclick="
-	calculation+='9';	
-	console.log(calculation);
-">9</button>
-<button onclick="
-	calculation+=' * ';
-	console.log(calculation);
-	localStorage.setItem("calculation", JSON.stringify(calculation));
-">x</button>
-</p>
+			<p class="buttons">
+				<button onclick="
+					calculation+='4';
+					console.log(calculation);
+				">4</button>
+				<button onclick="
+					calculation+='5';
+					console.log(calculation);
+				">5</button>
+				<button onclick="
+					calculation+='6';
+				">6</button>
+				<button class="operators" onclick="
+					calculation+=' - ';
+					console.log(calculation);
+				">-</button>
+			</p>
 
-<p class="buttons">
-<button onclick="
-	calculation+='0';
-	console.log(calculation);
-">0</button>
-<button onclick="
-	calculation+='.';
-	console.log(calculation);
-">.</button>
-<button onclick="
-	calculation+=' / ';
-	console.log(calculation);
-">/</button>
+			<p class="buttons">
+				<button onclick="
+					calculation+=7;
+					console.log(calculation);
+				">7</button>
+				<button onclick="
+					calculation+=8;
+					console.log(calculation);
+				">8</button>
+				<button onclick="
+					calculation+='9';	
+					console.log(calculation);
+				">9</button>
+				<button class="operators" onclick="
+					calculation+=' * ';
+					console.log(calculation);
+					localStorage.setItem("calculation", JSON.stringify(calculation));
+				">x</button>
+			</p>
 
-<button onclick="
-	calculation=eval(calculation);
-	console.log(calculation);
-	localStorage.setItem("calculation", JSON.stringify(calculation));
-">=</button>
+			<p class="buttons">
+				<button onclick="
+					calculation+='0';
+					console.log(calculation);
+				">0</button>
+				<button onclick="
+					calculation+='.';
+					console.log(calculation);
+				">.</button>
 
-</p>
+				<button onclick="
+					calculation=eval(calculation);
+					console.log(calculation);
+					localStorage.setItem("calculation", JSON.stringify(calculation));
+				">=</button>
 
-<p class="buttons">
-<button onclick="
-	calculation='';
-	console.log(calculation);
-	localStorage.setItem("calculation", JSON.stringify(calculation));
-">Clear</button>
-</p>
+				<button onclick="
+					calculation+=' / ';
+					console.log(calculation);
+				">/</button>
 
-      </form>
-     <script>
-	let calculation = JSON.parse(localStorage.getItem("calculation")) === null ? '' : JSON.parse(localStorage.getItem("calculation"));	
-	console.log(calculation);
+			</p>
 
-    </script>
+			<p class="buttons">
+				<button onclick="
+					calculation='';
+					console.log(calculation);
+					localStorage.setItem("calculation", JSON.stringify(calculation));
+				">Clear</button>
+			</p>
+			</div>
+			
+			<script>
+				let calculation = JSON.parse(localStorage.getItem("calculation")) === null ? '' : JSON.parse(localStorage.getItem("calculation"));	
+				console.log(calculation);
+			</script>
   </body>
 </html>
