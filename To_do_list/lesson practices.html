@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+  <head>
+    <title>js practice</title>
+  </head>
+  <body>
+    <h2>Arrays and Loops</h2>
+    <script>
+      let myArray = [10, 20, 30, 40];
+      console.log(myArray);
+
+      console.log(myArray[1]);
+      myArray[0] = 99;
+      console.log(myArray);
+
+      [1, "hello", true, { name: "socks" }, [1, 2]];
+      console.log(typeof [1, 2]);
+      console.log(myArray.length);
+      console.log(Array.isArray([1, 2]));
+      myArray.push(100);
+      console.log(myArray);
+      myArray.splice(0, 1);
+      console.log(myArray);
+
+      let i = 1;
+      while (i <= 5) {
+        console.log(i);
+        i++;
+      }
+
+      /*     let randomNum = 0;
+            while (randomNum <= 0.5) {
+              let array = [];
+              let random = Math.random();
+              array.push(random);
+              //console.log(array); //infinite possibility
+            }
+      */
+      let array2 = ["breakfast", "lunch", "snack", "dinner"];
+      function getLastValue(array) {
+        let i = array.length - 1;
+        return array[i];
+      }
+      let result = getLastValue(myArray);
+      console.log(result);
+      result = getLastValue(array2);
+      console.log(result);
+
+      function arraySwap(array) {
+        let temp = array[0];
+        array[0] = array[array.length - 1];
+        array[array.length - 1] = temp;
+        let i = 0;
+        while (i < array.length) {
+          console.log(array[i] + ",");
+          i++;
+        }
+      }
+      arraySwap(myArray);
+      arraySwap(array2);
+      function addNum(array, num) {
+        for (let i = 0; i < array.length; i++) {
+          array[i] += num;
+          console.log(array[i]);
+        }
+      }
+      addNum(myArray, 12);
+      addNum(array2, " and wash dishes");
+      function countPositive(array) {
+        let count = 0;
+        for (let i = 0; i < array.length; i++) {
+          if (array[i] > 0) count++;
+          else continue;
+        }
+        console.log(count + " positive numbers exist in the current array.");
+      }
+      myArray = [10, 20, 40, 60, 70];
+      countPositive(myArray);
+      countPositive(array2);
+      function minMax(nums) {
+        let min = nums[0],
+          max = nums[nums.length - 1];
+        // let null='null';
+
+        for (let i = 0; i < nums.length; i++) {
+          if (nums[i] <= min) min = nums[i];
+          else if (nums[i] >= max) max = nums[i];
+          else if ((nums.length = 1)) {
+            min = nums[i];
+            max = nums[i];
+          } else {
+            let mini = "null";
+            let maxi = "null";
+          }
+        }
+        console.log(
+          "From the given array: {" +
+            nums +
+            "} the maximum is {" +
+            max +
+            "} and the minimum is {" +
+            min +
+            "}.",
+        );
+      }
+      minMax(myArray);
+      minMax([""]);
+      minMax([3, 3, 2, 2, 2, 2, 3, 2]);
+      function countWords(words) {
+        let countElements = [];
+
+        for (let i = 0; i < words.length; i++) {
+          let count = 0;
+          for (let j = 0; j < words.length; j++) {
+            if (words[i] === words[j]) {
+              count++;
+            }
+          }
+          if (!countElements.some((element) => element.word === words[i])) {
+            countElements.push({ word: words[i], Count: count });
+          }
+        }
+        console.log(countElements);
+      }
+      countWords(array2);
+    </script>
+  </body>
+</html>
