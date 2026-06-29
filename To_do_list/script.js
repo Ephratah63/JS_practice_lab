@@ -1,34 +1,77 @@
-const todoList = ["do the laundry", "prepare lunch"];
+const todoList = [
+  {
+    name: "do the laundry",
+    dueDate: "2026-06-29",
+  },
+  {
+    name: "prepare lunch",
+    dueDate: "2026-06-29",
+  },
+];
+
 listingOnPage();
+
 function listingOnPage() {
   let todoListHTML = "";
   for (let i = 0; i < todoList.length; i++) {
-    const todo = todoList[i];
-    const html = `<div>
-      <p>${todo}</p>
-      <button class="delete_btn" onclick="
-        todoList.splice(${i}, 1);
-        listingOnPage();
-        "><input class="text" type="date" value="2026-02-18">
-        <img 
-          src="images/icon_delete.png" alt="delete icon" style="width: 20px; height: 12px">
-      </button>
-    </div>`;
+    const todoObject = todoList[i];
+    const name = todoObject.name;
+    // shorter version; const{name}=todoObject;
+    const dueDate = todoObject.dueDate;
+    //shorter shorter version; const{name, dueDate}=todoObject;
+
+    //process called; generating HTML
+    const html = `
+      <div class="todo_list_grid">
+        <div>${name}</div>
+        <div>${dueDate}</div>
+        <input
+          class="due_date_input" 
+          type="date" 
+          value="${dueDate}"
+        >
+        <button 
+          class = "delete_btn" 
+          onclick = "
+            todoList.splice(${i}, 1);
+            listingOnPage();
+        ">
+          <img 
+            src = "images/icon_delete.png" 
+            alt = "delete icon"
+          >
+        </button>
+      </div>`;
     todoListHTML += html;
   }
-  console.log(todoListHTML);
   document.querySelector(".todo_list").innerHTML = todoListHTML;
 }
 
 function addTodo() {
-  const inputElement = document.querySelector(".name-input");
+  const inputElement = document.querySelector(".add_task");
   const name = inputElement.value;
-  console.log(name);
 
-  todoList.push(name);
-  console.log(todoList);
+  const dateInputElement = document.querySelector(".due_date_input");
+  const dueDate = dateInputElement.value;
 
-  inputElement.value = "";
+  //to check if both fields have values
+  if (name && dueDate) {
+    todoList.push({
+      name: name,
+      dueDate: dueDate,
+      //shorter version;
+      // name,
+      //dueDate
+    });
 
-  listingOnPage();
+    //clear name input
+    inputElement.value = "";
+    //clear due date input
+    dateInputElement.value = "";
+
+    listingOnPage();
+  } else {
+    //console.log("Please fill in both fields.");
+    alert("Please fill in both fields.");
+  }
 }
