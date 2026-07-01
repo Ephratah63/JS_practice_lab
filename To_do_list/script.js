@@ -1,11 +1,11 @@
 const todoList = [
   {
-    name: "do the laundry",
-    dueDate: "2026-06-29",
+    name: "Do the laundary",
+    dueDate: "2026-07-09",
   },
   {
-    name: "prepare lunch",
-    dueDate: "2026-06-29",
+    name: "Prepare lunch",
+    dueDate: "2026-06-24",
   },
 ];
 
@@ -23,25 +23,11 @@ function listingOnPage() {
     //process called; generating HTML
     const html = `
       <div class="todo_list_grid">
-        <div>${name}</div>
-        <div>${dueDate}</div>
-        <input
-          class="due_date_input" 
-          type="date" 
-          value="${dueDate}"
-        >
-        <button 
-          class = "delete_btn" 
-          onclick = "
-            todoList.splice(${i}, 1);
-            listingOnPage();
-        ">
-          <img 
-            src = "images/icon_delete.png" 
-            alt = "delete icon"
-          >
-        </button>
-      </div>`;
+        <span>${name}</span>
+        <span>${dueDate}</span>
+        <button class = "delete_btn" onclick = "todoList.splice(${i}, 1); listingOnPage();"><img src = "images/icon_delete.png" alt = "delete icon"></button>
+      </div>
+    `;
     todoListHTML += html;
   }
   document.querySelector(".todo_list").innerHTML = todoListHTML;

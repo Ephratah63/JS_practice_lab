@@ -1,13 +1,16 @@
 body {
   font-family:
-    Georgia, fantasy, 'Courier New', Courier, 
+    Georgia,
+    fantasy,
+    "Courier New",
+    Courier,
     Arial Black;
   color: blue;
   background-color: aqua;
   margin: 50px;
 }
 
-header{
+header {
   border: 10px double orangered;
   color: black;
   background-color: rgb(231, 224, 6);
@@ -22,59 +25,88 @@ h4 {
 }
 
 main {
-  text-align: left;
+  text-align: center;
   margin: 80px;
   padding-top: 0px;
-  padding-left:30px;
+  padding-left: 30px;
   padding-right: 20px;
   padding-bottom: 50px;
 }
 
-.todo_list_grid{
+.todo_list {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: orangered;
+  text-align: center;
+}
+
+.todo_input_grid,
+.todo_list_grid {
   display: grid;
-  grid-template-columns: 250px 125px 65px;
+  grid-template-columns: 200px 150px 150px 70px;
+  column-gap: 25px;
+  row-gap: 50px;
+  align-items: center;
+}
+
+.todo_input_grid {
+  margin-bottom: 10px;
+  align-items: center;
 }
 
 .due_date_input,
-.today_date{
-  font-weight:bold;
+.today_date {
+  font-weight: bold;
+  color: blue;
+  background-color: rgb(231, 224, 6);
   border: 2px solid black;
   border-radius: 5px;
-  background-color: rgb(221, 249, 249);
+  border-color: orangered;
   margin: 10px;
 }
 
-button{
+button {
   border: 2px solid black;
   border-radius: 5px;
-  background-color: rgb(221, 249, 249);
+  border-color: none;
+  border-style: outset;
+  background-color: rgb(231, 224, 6);
+  height: 50px;
   margin: 10px;
+  padding: 8px 15px 8px 15px;
+  cursor: pointer;
 }
 
-.add_task{
-  background-color: rgb(6, 231, 6);
+.add {
+  background-color: rgb(158, 254, 254);
+  text-align: center;
+  border-radius: 10px;
 }
 
-.todo_list{
-  font-family: cursive; 
-  color: rgb(255, 0, 157);
+.add_task {
+  background-color: green;
+  text-align: center;
 }
 
-img{
-  width: 13px; 
-  height: 15px;
+img {
+  width: 18px;
+  height: 20px;
   background-color: white;
 }
 
-.reset{
+.reset {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 15px;
   background-color: red;
+  border-radius: 50px;
+  padding: 8px 15px 8px 15px;
 }
 
 button hover {
-  color: red;
+  color: rgb(19, 18, 19);
 }
 
-footer{
+footer {
   border: 10px double orangered;
   font-family: impact;
   font-weight: solid;
@@ -84,6 +116,6 @@ footer{
   background-color: rgb(231, 224, 6);
 }
 
-footer ul{
+footer ul {
   list-style: none;
 }

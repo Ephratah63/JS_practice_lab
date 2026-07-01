@@ -14,6 +14,7 @@
         font-weight: bold;
       }
       .icons{
+        display: grid;
         align-items: justify;
         border: 7px double rgba(128, 0, 128, 0.516);
         padding: 0px;
@@ -26,7 +27,9 @@
         font-weight: bold;
       }
       .score{
-        /*flex: center;*/
+        display: grid;
+        align-items: justify;
+        grid-template-columns: 200px 150px 150px 70px;
         background-color: rgb(220, 220, 220);
         border: 5px solid rgba(128, 0, 128, 0.5);
         padding-top: 13px;
@@ -35,17 +38,9 @@
         padding-left: 13px;
         width: 70px;
         height: 30px;
-        .score1{
-          color: green;
-        }
-        .score2{
-          color: red;
-        }
-        .score3{
-          color: yellow;
-        }
       }
-      .resetBtn{
+      .resetBtn,
+      .autoPlayBtn{
         font-weight: bold;
         color: black;
         background-color: white;
@@ -78,9 +73,8 @@
       <p class="score_2 score score2">Losses: 0</p>
       <p class="score_3 score score3">Ties: 0</p>
 
-		 <button class="resetBtn" onclick="
-		 	reset();
-		 ">Reset score</button>
+		 <button class="resetBtn" onclick="reset();">Reset score</button>
+     <button class="autoPlayBtn" onclick="autoPlay();">Auto Play</button>
 
      <script src="My_script.js"></script>
 

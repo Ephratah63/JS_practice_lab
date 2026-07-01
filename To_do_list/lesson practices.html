@@ -123,6 +123,158 @@
         console.log(countElements);
       }
       countWords(array2);
+
+      console.log("__________________________");
+      console.log("Array as a reference only");
+      const array1 = [1, 2, 3]; //this variable only contains the reference to the location of this[1,2,3] in the computer's memory
+      const array3 = array1; //now array3 copies the reference to the location of the exact data
+      array3.push(4); //only push to array3
+      console.log(array1); //but both change because they both point to the location of the same data
+      console.log(array3);
+      const array4 = [1, 2, 3];
+      const array5 = array4.slice(); //this will make a copy of the values referenced by array4
+      array5.push(4); //so this change will only affect array5 and not both
+      console.log(array4);
+      console.log(array5);
+
+      console.log("__________________________");
+      console.log("Array destructuring");
+      console.log(array5[2]);
+      //another way to access the elements of an array with no use of index
+      const [firstvalue, secondvalue] = [1, 2, 3];
+      console.log(firstvalue); //it will take the values nad saves them in the corresponding variables
+
+      console.log("__________________________");
+      console.log("Using break and continue");
+      for (let i = 1; i < 11; i++) {
+        //to skip a number if it is divisible by 3 by checking if the remainder is 0
+        if (i % 3 === 0) {
+          //it lets us skip a single loop, here it skips multiples of 3, and then continues iterating through the rest of the loop
+          continue;
+        }
+        console.log(i);
+        if (i === 8) {
+          //it only counts uniitl 8, and stops the loop early, it exists
+          break;
+        }
+      }
+
+      //in a while looop though, we must manually ensure it gets incremented before the continue, otherwise it will be an infinite loop
+      while (i < 11) {
+        if (i % 3 === 0) {
+          i++;
+          continue;
+        }
+        console.log(i);
+        i++;
+      }
+
+      console.log("__________________________");
+      console.log("The accumulator pattern using 'reduce'");
+      const numbers = [1, 2, 3, 4, 5];
+      const sum = numbers.reduce((accumulator, currentValue) => {
+        return accumulator + currentValue;
+      }, 10);
+      console.log(sum);
+
+      console.log("__________________________");
+      console.log("The accumulator pattern using 'a loop'");
+      const numbers2 = [1, 2, 3, 4, 5];
+      let sum2 = 0; //initializing the accumulator
+      for (let i = 0; i < numbers2.length; i++) {
+        sum2 += numbers2[i];
+      }
+      console.log(sum2);
+
+      console.log("__________________________");
+      console.log(
+        "The accumulator pattern for 'counting occurences of items in an array'",
+      );
+      const fruits = [
+        "apple",
+        "banana",
+        "orange",
+        "apple",
+        "orange",
+        "banana",
+        "apple",
+      ];
+      const fruitCount = fruits.reduce((accumulator, fruit) => {
+        if (!accumulator[fruit]) {
+          accumulator[fruit] = 0;
+        }
+        accumulator[fruit]++; //incrementing the count one time for each element in the array
+        return accumulator;
+      }, {}); //initial value=an empty object
+      console.log(fruitCount);
+
+      const array6 = ["hello", "world", "search", "good"];
+      const array7 = ["not", "found"];
+      array6.push("search");
+      const array8 = array6;
+      function search(array) {
+        let i = 0;
+        while (i < array.length) {
+          if (array[i] === "search") {
+            return i;
+          } else {
+            i++;
+          }
+        }
+        return -1;
+      }
+      console.log(search(array6));
+      console.log(search(array7));
+      console.log(search(array8));
+
+      const array9 = ["green", "red", "blue", "red"];
+      function findIndex(array, word) {
+        let i = 0;
+        while (i < array.length) {
+          if (array[i] === word) {
+            return i;
+          } else {
+            i++;
+          }
+        }
+        return -1;
+      }
+      console.log(findIndex(array9, "red"));
+      console.log(findIndex(array9, "yellow"));
+
+      let array10 = ["egg", "apple", "egg", "egg", "ham"];
+      function removeEgg(foods) {
+        let newArray = [];
+        let count = 0;
+        foods.reverse();
+        for (let i = 0; i < foods.length; i++) {
+          if (foods[i] === "egg" && count < 2) {
+            count++;
+          } else {
+            newArray.push(foods[i]);
+          }
+        }
+        foods.reverse();
+        console.log(newArray.reverse());
+        console.log(foods);
+      }
+      removeEgg(array10);
+
+      //the famous fizz bizz problem
+      for (let i = 0; i < 21; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+          console.log("FizzBuzz");
+          continue;
+        } else if (i % 3 === 0) {
+          console.log("Fizz");
+          continue;
+        } else if (i % 5 === 0) {
+          console.log("Buzz");
+          continue;
+        } else {
+          console.log(i);
+        }
+      }
     </script>
   </body>
 </html>

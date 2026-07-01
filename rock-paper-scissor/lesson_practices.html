@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Advanced functions</title>
+  </head>
+  <body>
+    <script>
+      //functions are values
+
+      //hoisting = calling a function before it is even built, but does not work for anonymous functions nor for shortened form of writing functions as the variable must be called before being initialized properly
+      function1();
+
+      function function1() {
+        console.log("hello1");
+      }
+
+      //saving a function into a variable
+      const function2 = function greeting() {
+        console.log("hello2");
+      };
+      console.log(function2);
+      console.log(typeof function2);
+      //can run just the variable as it contains a function
+      function2();
+
+      //anonymous function = a function without a name
+      const function3 = function () {
+        console.log("hello3");
+      };
+      function3();
+
+      //we can also pass a function as a parameter in another function, the function that is being passed is called a callback function
+      function display(parameter) {
+        console.log("displaying " + parameter);
+      }
+      display(function3());
+
+      //setTimeout() is a builtin function that allows to run a function in the future, it requires a function as the first parameter and the required wait time in integer value as the second parameter, in milliseconds, where 1000milliseconds = 1second
+      setTimeout(function () {
+        console.log("Timeout!");
+      }, 3000);
+
+      //asynchronous code means the line #39 won't wait for it to finish before going to the next line
+      console.log('next line');
+      //synchronous code means the computer will wait for one line to finish before going to the next line, all the codes we have been using to this day are synchronous, except the ones after the functions like; setTimeout()
+
+      //setInteval() runs every set seconds, as in if set 3000; it will display its messsage every 3 seconds in the future
+      setInterval(function(){
+        console.log('Interval');
+      },3000)
+      //same as before this also runs the next until then and will not hold code back until it is done
+      console.log('next line 2');
+    </script>
+  </body>
+</html>
