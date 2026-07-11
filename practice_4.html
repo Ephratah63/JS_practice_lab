@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+  <head>
+    <title>DOM manipulation</title>
+  </head>
+  <body>
+    <h1 id="welcome_text" style="color: red">Welcome</h1>
+    <div>
+      <!--a title in an element gets gisplayed when hovering over the text on the browser-->
+      <span title="hey">line 1</span>
+      <span>line 2</span>
+      <span style="display: none">Ready!</span>
+    </div>
+    <script>
+      /*
+      DOM=Document Object Model
+      -- is an object{} that represents the page we see on the browser
+      -- provides us with an API to interact with it
+      -- is constructed by the web browser when it loads an HTML document
+      -- structures all the elements in a tree-like representation
+      -- is accessed by Javascript to dynamically change the content, the structure, and style of a web page.
+      */
+
+      console.log(document);
+      console.dir(document);
+
+      const body = document.body;
+      body.style.backgroundColor = "black";
+      body.style.color = "blue";
+
+      const username = "FCodes";
+      const welcomeMessage = document.getElementById("welcome_text");
+      welcomeMessage.textContent += username === "" ? " Guest" : ` ` + username;
+
+      //with append, we can work with strings, and can work with multiple things. It has more versatility
+      body.append("Hello1");
+      body.append("\n", "Are", "You", "Ready");
+      /*appendChild would not work with strings, but only with elements:
+      -- divs
+      -- spans
+      -- anchor tags
+      and it can only append one thing at a time
+      */
+      //body.appendChild("Hello World!");
+
+      const div2 = document.querySelector("div");
+      //creating element
+      const div1 = document.createElement("div");
+      const strong = document.createElement("strong");
+      //adding the element on the page, to the HTML
+      body.append(div1);
+      //but for appending, it must be redeclared or cloned each time, because can only append once.
+
+      //two ways to add text to our div
+      //1,
+      const div3 = document.createElement("div");
+      div3.innerText = "Let's do this!";
+      body.append(div3);
+      console.log(div3.innerText);
+      //2,
+      const div4 = document.createElement("div");
+      div4.textContent = "Hello2";
+      body.append(div4);
+      console.log(div4.textContent);
+
+      //using textContent prints out onto new lines on console, it can also printout invisible texts that don't show up on the browser
+      console.log(div2.textContent);
+      //using innerText prints out on the same line on console, but does not printout invisible texts as it would be displayed on the browser
+      console.log(div2.innerText);
+
+      const div5 = document.createElement("div");
+      div5.textContent = "<strong>Hello3</strong>";
+      body.appendChild(div5);
+      console.log(div5.textContent);
+      const div6 = document.createElement("div");
+      div6.innerText = "<strong>Hello4</strong>";
+      console.log(div6.innerText);
+      body.appendChild(div6);
+      //to modify the HTML element
+      const div7 = document.createElement("div");
+      div7.innerHTML = "<strong>Hello5</strong>";
+      body.append(div7);
+      //but this method allows for user to change as they want and insert malicious lines of codes
+      strong.innerText = "Hello6";
+      const div8 = document.createElement("div");
+      body.append(strong);
+
+      //to remove an element
+      strong.remove();
+      //to rewrite it again
+      body.append(strong);
+    </script>
+  </body>
+</html>

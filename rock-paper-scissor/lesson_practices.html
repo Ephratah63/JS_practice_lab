@@ -5,6 +5,7 @@
   </head>
   <body>
     <script>
+      /*
       //functions are values
 
       //hoisting = calling a function before it is even built, but does not work for anonymous functions nor for shortened form of writing functions as the variable must be called before being initialized properly
@@ -50,6 +51,42 @@
       },3000)
       //same as before this also runs the next until then and will not hold code back until it is done
       console.log('next line 2');
+      */
+
+      //another way to loop through arrays
+      //using forEach method, which will pass another function that has a parameter as a parameter, it is a prefereed way to loop through an array because it is easier to read, and it can also pass a second parameter
+      //it will loop through the array, save it in the passed parameter and run the function
+      [
+        'make dinnner',
+        'wash dishes',
+        'watch youtube'
+        //for each value in the array, it will save the value in the parameter and run the function to display it, then on to the next array
+      ].forEach(function(value, index){
+        if(value==='wash dishes'){
+          return; //does the same thing as continue;
+          //but is complex to use break in a forEach loop, so use break with a regular for loop
+        }
+        console.log(index);
+        console.log(value);
+      });
+
+      //exercise 12a
+      let add=function(){
+        console.log(2+3);
+      }
+      add();
+      add();
+
+      //exercise 12b
+      let runTwice=function(fun(){
+        console.log('12b');
+      }){
+        fun();
+        fun();
+      }
+
+      //exercise 12c
+      //practicccccce scene 10:08:00-to-10:10:21
     </script>
   </body>
 </html>

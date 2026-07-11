@@ -140,9 +140,10 @@ function reset() {
 let isAutoPlaying = false;
 let intervalId;
 
+//rewatch scene 9:50:00-to-9:59:00
 function autoPlay() {
   if (!isAutoPlaying) {
-    intervalId = setInterval(function () {
+    intervalId = setInterval(() => { 
       const playerMove = pickComputerMove();
       playGame(playerMove);
     }, 1000);
@@ -174,6 +175,8 @@ function randomiser() {
   console.log(compMove);
   return compMove;
 }
+
+//rewatch scene 9:50:00-to-9:59:00
 
 function addScore(result) {
   if (result === "You Win!") {

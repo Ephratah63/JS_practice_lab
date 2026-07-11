@@ -275,6 +275,25 @@
           console.log(i);
         }
       }
+
+      const array_1 = ["green", "red", "blue", "red"];
+      const array_2 = ["red", "green", "green", "red"];
+      function unique(array) {
+        const count = {}; //an object to count accurences
+        const result = [];  //an array to hold the unique values
+        
+        for (let i = 0; i < array.length; i++) {
+          if (!count[array[i]]) { //check if the element hasn't already been counted
+            count[array[i]]=1;  //initializing count for the element
+            result.push(array[i]);  //add unique element to the result array
+          } else {
+            continue;
+          }
+        }
+        return result;
+      }
+      console.log(unique(array_1));
+      console.log(unique(array_2));
     </script>
   </body>
 </html>

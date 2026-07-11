@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" lang="en" />
+    <title>To-do list</title>
+    <link rel="stylesheet" href="11x.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Todo List</h1>
+      <h2>Welcome Ephratah!</h2>
+    </header>
+
+    <main>
+      
+      <!--<form action="tasks.php" method="POST">-->
+      <h4>Tasks</h4>
+      <h3>
+        Today is:
+        <input class="today_date" type="date" value="2026-02-18" />
+        <button class="reset">Start Over</button>
+      </h3>
+      <div class="todo_input_grid">
+        <input class="add" type="text" placeholder="add a task" />
+        <input class="due_date_input" type="date" />
+        <button class="add_task" onclick="addTodo()">Add</button>
+      </div>
+
+      <!--to display the todo list-->
+      <div class="todo_list" class="todo_list_grid"></div>
+
+      <!--</form>-->
+    </main>
+
+    <footer>
+      <small>
+        <ul>
+          <li>About</li>
+          <li>Contact</li>
+          <li>Help</li>
+        </ul>
+      </small>
+    </footer>
+
+    <script src="11x.js"></script>
+  </body>
+</html>

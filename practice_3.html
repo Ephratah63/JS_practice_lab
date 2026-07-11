@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Advanced functions part 2</title>
+  </head>
+  <body>
+    <script>
+      const regularFunction = function (param1, param2) {
+        console.log("hello1");
+        return 5;
+      };
+      regularFunction();
+      /*arrow functions, mostly operate the same way as regular functions
+      what makes tehm is
+      --> have shortcuts that regular functions don't have
+      */
+      const arrowFunction = (param1, param2) => {
+        console.log("hello2");
+        return 5;
+      };
+      arrowFunction();
+
+      //can also ommit the brackets for one parameter passing in arrow functions
+      const oneparam = (param) => {
+        console.log(param + 1);
+      };
+      oneparam(2);
+
+      const oneLine = () => 7 + 3;
+      console.log(oneLine());
+
+      [
+        "make dinnner",
+        "wash dishes",
+        "watch youtube",
+        //for each value in the array, it will save the value in the parameter and run the function to display it, then on to the next array
+      ].forEach( (value, index) =>{
+        if (value === "wash dishes") {
+          return;
+        }
+        console.log(index);
+        console.log(value);
+      });
+    </script>
+  </body>
+</html>
